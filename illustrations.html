@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="" name="description" />
+    <meta content="HTML, CSS, JavaScript" name="keywords" />
+    <meta content="Cindy Xia" name="author" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link href="wrapper.css" rel="stylesheet" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&amp;display=swap" rel="stylesheet" />
+    <script src="scripts.js" type="text/javascript">
+    </script>
+</head>
+<header>
+    <div class="navbar">
+        <div class="icons" style="margin-bottom: 20px">
+            <span>
+                <a href="mailto:name@cindyxia@lcad.edu">
+                    <img src="assets\_icons\email.png" />
+                </a>
+                <a href="https://www.instagram.com/yamcrumbs/" rel="noopener noreferrer" target="_blank">
+                    <img src="assets\_icons\instagram.png" />
+                </a>
+                <h1 style="display:inline">
+                    Cindy Xia
+                </h1>
+            </span>
+        </div>
+        <a href="index.html">
+            Home
+        </a>
+        <a href="illustrations.html">
+            Illustrations/Paintings
+        </a>
+        <a href="comics.html">
+            Comics
+        </a>
+        <a href="about.html">
+            About/Contact
+        </a>
+    </div>
+</header>
+
+<body>
+    <section class="wrapper" id="projects">
+        <div class="project">
+            <a href="https://www.instagram.com/homecookeddev/" rel="noopener noreferrer" target="_blank">
+                <h1>
+                    Illustrations for Homecooked (2020)
+                </h1>
+            </a>
+            <p>
+                Homecooked is a turn-based narrative RPG, all about cooking! Check out the game development page here!
+                In the illustrations done below, I was asked to draw using a crayon and pastel style inspired by
+                children's books and the artwork of Louie Zong. I had free reign to draw any subjects I wanted, so I
+                focused on environments and character designs.
+            </p>
+            <div class="project-grid">
+                <img src="assets\illustrations\1project\cute_yellow.png" />
+                <img src="assets\illustrations\1project\finalperspective_less-rendered.png" />
+                <img src="assets\illustrations\1project\wwx_cheeb.png" />
+            </div>
+        </div>
+        <div class="project">
+            <h1>
+                Prop Art
+            </h1>
+            <p>
+                These are some of the food props I created for Homecooked. The director asked me to draw in a simpler,
+                playful style that still manages to look interesting, appetizing and fun. Look forward to seeing more
+                food art in future demos!
+            </p>
+            <div class="project-grid">
+                <img src="assets\illustrations\2project\hunneybee.png" />
+                <img src="assets\illustrations\2project\IMG_0882 copy.png" />
+                <img src="assets\illustrations\2project\IMG_0936 copy.png" />
+            </div>
+        </div>
+    </section>
+    <div class="modal">
+        <span class="close">
+            x
+        </span>
+        <img class="modalImage" id="srcimg" />
+    </div>
+    <script>
+        modalImage(".project-grid");
+    </script>
+</body>
+<footer>
+</footer>
+
+</html>

@@ -1,0 +1,319 @@
+:root{
+    --bgcolor: #FCFAF5; 
+    --txtcolor: #21202d;
+}
+/***** template *****/
+
+* {
+ box-sizing: border-box;
+ font-family:'Raleway', sans-serif;
+ background-color: var(--bgcolor);   
+ color: var(--txtcolor)
+
+}
+* > p,h1 {
+    margin: 20px;
+}
+.wrapper{
+    max-width: auto;
+    margin: 30px auto;
+    padding: 30px 10px;
+    border: solid var(--txtcolor);
+}
+
+header{
+    border: solid var(--txtcolor);
+    font-size: 50px;
+}
+
+.icons{
+    margin: 10px 0px;
+}
+.icons img{
+    height: 2%;
+    width: 2%;
+}
+a:link {
+    text-decoration: none;
+}
+  
+a:visited {
+    text-decoration: none;
+}
+  
+a:hover {
+    text-decoration: underline;
+}
+  
+a:active {
+    text-decoration: underline;
+}
+
+/* navbar */
+.navbar{
+    font-size: 35px;
+    text-align:right;
+    display: block;
+    margin: 30px;
+}
+
+.navbar a{
+    font-size: 25px;
+    border: solid var(--txtcolor);
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+.navbar span a{
+    border: none;
+    padding: 0px;
+    margin: 3px;
+}
+.navbar a:hover{
+    color: slategray;
+    opacity: 75%
+}
+
+.navbar h1{
+    margin: 30px 0px;
+    padding-right: 10px;
+}
+/*************************** GALLERY CLASS WRAPPER ***************************/
+
+#galleries{ /*remove the box from view*/
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap;  
+    align-items: center; 
+    justify-content: space-evenly;
+}
+.gallery img {
+    max-width: auto;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    /*border: solid var(--txtcolor);*/
+    transition: 0.8s;
+}
+.gallery img:hover {
+    
+    border: solid rgba(0,0,0,0.2);  
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*** Modal for Gallery ***/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modalImage{
+    margin: auto;
+    display: block;
+    width:  auto;
+    height: auto;
+    max-width: 1000px;
+    max-height: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: var(--bgcolor);
+    background-color: rgba(0,0,0,0);
+    font-size: 80px;
+    font-weight: bold;
+    transition: 0.3s;
+ }
+
+.close:hover,
+.close:focus {
+   color: rgb(255, 0, 0);
+   cursor: pointer;
+}
+
+/*************************** PROJECT CLASS WRAPPER ***************************/
+
+#projects{ /*remove the box from view*/
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.project{
+    font-size: 19px;
+    border: solid var(--txtcolor);
+    padding: 20px;
+    margin: 30px 0px;
+}
+
+.project-grid{
+    display: flex;
+    flex-flow: row wrap;  
+    align-items: center; 
+    justify-content: space-evenly;
+}
+
+.project-grid img{
+    max-width: auto;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    /*border: solid var(--txtcolor);*/
+    transition: 0.8s;
+}
+
+.project-grid img:hover {
+    border: solid rgba(0,0,0,0.2);  
+    opacity: 0.8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/*************************** COMIC CLASS WRAPPER ***************************/
+
+#comics{ /*remove the box from view*/
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.comic-object{
+    display: inline-grid;  
+    grid-template-rows: auto;
+    grid-template-columns: 40% 60%;
+    font-size: 19px;
+    border: solid var(--txtcolor);
+    padding: 20px;
+    margin: 30px 0px;
+}
+
+.item-b{
+    justify-self: center;
+    position: relative;
+}
+
+.comic-page{
+    width: auto;
+    height: auto;
+    max-width: 700px;
+    max-height: 700px;
+    border: solid var(--txtcolor);
+    display: none;
+}
+
+.comic-button {
+    opacity: 10%;
+    height: 100%;
+    width: 50%;
+    transition: 0.5s;
+    font-size: 20px;
+    padding: 2%;
+    border: none;
+    background: none;
+    outline: none;
+}
+.comic-button:hover{
+    opacity: 50%;
+}
+
+.comic-left{
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.comic-right{
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.grid-item{
+    align-self: center;
+    text-align: right;
+}
+/*************************** ABOUT PAGE WRAPPERS ***************************/
+
+.about{
+    display: grid;
+    font-size: 25px;
+    grid-template-columns: 50% auto;
+    grid-template-rows: 100%;
+}
+
+.about img {
+    max-width: auto;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    justify-self: center;
+}
+
+#description p{
+    align-self: center;
+    justify-self: center;
+}
+
+#contact{
+    width: 90%;
+    margin: 2% 5%;
+    display: inline-block;
+}
+
+input[type=text], #email{
+    width: 40%;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background-color:#f8edd2;
+    border: solid var(--txtcolor);
+}
+
+input[type=submit]{
+    background-color: #f8edd2;
+    font-family:'Raleway', sans-serif;
+    padding: 12px 20px;
+    border: solid var(--txtcolor);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#message{
+    width: 40%;
+    height: 150px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    background-color: #f8edd2;
+    resize:none;
+    border: solid var(--txtcolor);
+}
+
+.contact-form h1 {
+    margin-left: 5%;
+}
