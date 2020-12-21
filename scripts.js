@@ -16,10 +16,11 @@ function modalImage(classname) {
             });
         });
     });
-    let close_x = document.querySelector(".close");
-    close_x.addEventListener("click", () => {
-        modalEle.style.display = "none";
-    });
+    modalEle.addEventListener("click", event => {
+        if (event.target != modalImage) {
+            modalEle.style.display = "none";
+        }
+    })
 }
 
 function comicDisplay(classname) {
@@ -79,4 +80,14 @@ function submitHandler() {
     else {
         console.log("email and message are empty")
     }
+}
+
+function returntoTop() {
+    let topbuttons = Array.from(document.querySelectorAll(".to-top"));
+    topbuttons.forEach(top => {
+        top.addEventListener("click", () => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    });
 }

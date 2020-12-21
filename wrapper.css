@@ -5,13 +5,14 @@
 /***** template *****/
 
 * {
- box-sizing: border-box;
- font-family:'Raleway', sans-serif;
- background-color: var(--bgcolor);   
- color: var(--txtcolor)
-
+    box-sizing: border-box;
+    font-family:'Raleway', sans-serif;
+    background-color: var(--bgcolor);   
+    color: var(--txtcolor);
+    scroll-behavior: smooth;
 }
-* > p,h1 {
+
+p,h1 {
     margin: 20px;
 }
 .wrapper{
@@ -21,18 +22,19 @@
     border: solid var(--txtcolor);
 }
 
+/* header */
+
 header{
     border: solid var(--txtcolor);
-    font-size: 50px;
 }
 
-.icons{
-    margin: 10px 0px;
+header a {
+    transition: 0.5s;
 }
-.icons img{
-    height: 2%;
-    width: 2%;
+header img {
+    transition: 0.5s;
 }
+
 a:link {
     text-decoration: none;
 }
@@ -42,46 +44,59 @@ a:visited {
 }
   
 a:hover {
-    text-decoration: underline;
+    color: slategray;
+    opacity: 75%;
 }
   
 a:active {
     text-decoration: underline;
 }
 
-/* navbar */
 .navbar{
-    font-size: 35px;
-    text-align:right;
-    display: block;
-    margin: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin: 5px 30px 30px 30px;
+    padding: 10px; 
+    font-size: 1.5em;
 }
 
 .navbar a{
-    font-size: 25px;
     border: solid var(--txtcolor);
-    margin: 10px;
+    margin: 10px 10px;
     padding: 10px;
     text-decoration: none;
-    transition: color 0.5s ease;
-}
-.navbar span a{
-    border: none;
-    padding: 0px;
-    margin: 3px;
-}
-.navbar a:hover{
-    color: slategray;
-    opacity: 75%
 }
 
-.navbar h1{
-    margin: 30px 0px;
-    padding-right: 10px;
+.icons{
+    font-size: 2.5em;
+    text-align: right;
+    margin: 30px 30px 0px 30px;
+    text-decoration: none;
 }
+.icons img{
+    max-width: 30px;
+    padding: 0px;
+}
+
+.icons h1{
+    display: inline;
+    margin: 20px 20px 20px 5px;
+}
+
+footer{
+    text-align: right;
+    opacity: 80%;
+}
+
+.to-top{
+    display: none;
+}
+
+    
 /*************************** GALLERY CLASS WRAPPER ***************************/
 
-#galleries{ /*remove the box from view*/
+#galleries{ /*emove the box from view*/
     margin: 0px;
     padding: 0px;
     border: none;
@@ -94,7 +109,7 @@ a:active {
     justify-content: space-evenly;
 }
 .gallery img {
-    max-width: auto;
+    max-width: 100%;
     max-height: 400px;
     width: auto;
     height: auto;
@@ -130,37 +145,20 @@ a:active {
     display: block;
     width:  auto;
     height: auto;
-    max-width: 1000px;
-    max-height: 700px;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: var(--bgcolor);
-    background-color: rgba(0,0,0,0);
-    font-size: 80px;
-    font-weight: bold;
-    transition: 0.3s;
- }
-
-.close:hover,
-.close:focus {
-   color: rgb(255, 0, 0);
-   cursor: pointer;
+    max-width: 80%;
+    max-height: 80%;
 }
 
 /*************************** PROJECT CLASS WRAPPER ***************************/
 
-#projects{ /*remove the box from view*/
+#projects{ /*emove the box from view*/
     margin: 0px;
     padding: 0px;
     border: none;
 }
 
 .project{
-    font-size: 19px;
+    font-size: 1.2em;
     border: solid var(--txtcolor);
     padding: 20px;
     margin: 30px 0px;
@@ -174,12 +172,11 @@ a:active {
 }
 
 .project-grid img{
-    max-width: auto;
-    max-height: 300px;
+    max-width: 100%;
+    max-height: 400px;
     width: auto;
     height: auto;
     padding: 10px;
-    /*border: solid var(--txtcolor);*/
     transition: 0.8s;
 }
 
@@ -192,7 +189,7 @@ a:active {
 
 /*************************** COMIC CLASS WRAPPER ***************************/
 
-#comics{ /*remove the box from view*/
+#comics{ /*emove the box from view*/
     margin: 0px;
     padding: 0px;
     border: none;
@@ -202,7 +199,7 @@ a:active {
     display: inline-grid;  
     grid-template-rows: auto;
     grid-template-columns: 40% 60%;
-    font-size: 19px;
+    font-size: 1.2em;
     border: solid var(--txtcolor);
     padding: 20px;
     margin: 30px 0px;
@@ -216,8 +213,8 @@ a:active {
 .comic-page{
     width: auto;
     height: auto;
-    max-width: 700px;
-    max-height: 700px;
+    max-width: 100%;
+    max-height: 800px;
     border: solid var(--txtcolor);
     display: none;
 }
@@ -227,7 +224,7 @@ a:active {
     height: 100%;
     width: 50%;
     transition: 0.5s;
-    font-size: 20px;
+    font-size: 1.2em;
     padding: 2%;
     border: none;
     background: none;
@@ -261,13 +258,13 @@ a:active {
 
 .about{
     display: grid;
-    font-size: 25px;
-    grid-template-columns: 50% auto;
+    font-size: 1.5em;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
 }
 
 .about img {
-    max-width: auto;
+    max-width: 100%;
     max-height: 600px;
     width: auto;
     height: auto;
@@ -288,7 +285,7 @@ a:active {
 }
 
 input[type=text], #email{
-    width: 40%;
+    width: 50%;
     padding: 12px 20px;
     border-radius: 4px;
     background-color:#f8edd2;
@@ -316,4 +313,107 @@ input[type=submit]{
 
 .contact-form h1 {
     margin-left: 5%;
+}
+
+/*** SMALLER DEVICE SETTINGS ***/
+@media only screen and (max-width: 550px){
+
+    /* template */
+
+    a:link {
+        text-decoration: underline;
+    }
+    .navbar{
+        display: block;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .navbar a{
+        font-size: 1.2rem;
+        display: block;
+        margin: 10px 30px;  
+        text-decoration: none;
+    }
+
+    .icons{
+        text-align: center;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .icons h1{
+        font-size: 3rem;
+        display: block;
+        margin: auto;
+    }
+    .icons a{
+        text-decoration: none;
+    }
+
+    footer{
+        text-align: center;
+        font-size: 0.8em;
+    }
+
+    footer p{
+        margin: 0px;
+    }
+
+    .to-top{
+        display: block;
+    }
+
+    #to-nav{
+        font-size: 4em;
+    }
+    /* illustrations */
+
+    .project p,h1{
+        font-size: 0.7em;
+        text-align: center;
+    }
+    .project a{
+        font-size: 1em;
+    }
+
+    /* comics */
+
+    .comic-object{
+        display: inline-block;
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+    }
+
+    .comic-object p,h1{
+        font-size: 0.7em;
+        text-align: center;
+    }
+
+    .comic-object a{
+        font-size: 1em;
+    }
+
+    .item-b{
+        display: block;
+    }
+
+    /* about */
+
+    .about{
+        grid-template-columns: 100%;
+        grid-template-rows: 45% auto;
+    }
+
+    #description p,a,b{
+        font-size: 0.7em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .contact-form h1{
+        font-size: 2em;
+    }
+    input[type=text], #email, #message{
+        width: 100%;
+    } 
 }
