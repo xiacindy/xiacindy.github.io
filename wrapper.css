@@ -96,17 +96,20 @@ footer{
     
 /*************************** GALLERY CLASS WRAPPER ***************************/
 
-#galleries{ /*emove the box from view*/
+#galleries{ /*remove the box from view*/
     margin: 0px;
     padding: 0px;
     border: none;
 }
 
 .gallery {
+    border: solid var(--txtcolor);
     display: flex;
     flex-flow: row wrap;  
     align-items: center; 
     justify-content: space-evenly;
+    padding: 20px;
+    margin: 30px 0px;
 }
 .gallery img {
     max-width: 100%;
