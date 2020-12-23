@@ -26,4 +26,4 @@ else
     git push
 fi
 
-sleep 3
+sleep 5
