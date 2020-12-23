@@ -17,6 +17,9 @@ sleep 1
 
 git add .
 git commit -m "auto commit"
+
+echo ~~~
+
 if [ -n "$(git status)" ];
 then
     echo "No Changes"
