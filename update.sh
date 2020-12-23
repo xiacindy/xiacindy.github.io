@@ -17,7 +17,7 @@ sleep 1
 
 git add .
 git commit -m "auto commit"
-if [ -n "$(git status - porcelain)" ];
+if [ -n "$(git status)" ];
 then
     echo "No Changes"
 else
