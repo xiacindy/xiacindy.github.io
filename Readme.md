@@ -12,16 +12,15 @@ in progress....
 3. execute the setup.sh file 
 
 **Updating Website**
-4. edit the assets folder to represent your view of the website 
-5. execute the update.sh file 
-6. go to cindyxia20.github.io to see if it looks how you want it 
+1. edit the assets folder to represent your view of the website 
+2. execute the update.sh file 
+3. go to cindyxia20.github.io to see if it looks how you want it 
 
 ### **About the Assets Folder**
 1. will do later__
 
 ### **Useful Stuff**
-1. there is a description.json maker in the gui folder. Just run descriptionmaker.exe!
-2. subasuba
+1. there is a description.json maker in the gui folder. Open terminal and type in `py descriptionmaker.py`
 
 DEVELOPER STUFF ~~~
 

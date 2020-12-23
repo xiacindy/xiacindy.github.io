@@ -29,4 +29,4 @@ else
     echo "No Changes"
 fi
 
-sleep 5
+sleep 3
