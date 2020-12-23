@@ -20,13 +20,6 @@ git commit -m "auto commit"
 
 echo ~~~
 
-if git status | grep "Your branch is ahead of 'origin/main' by" &> 
-then
-    echo "Pushing data..."
-    git push
-else
-    git status
-    echo "No Changes"
-fi
+git push -u origin main
 
 sleep 3
