@@ -20,7 +20,7 @@ git commit -m "auto commit"
 
 echo ~~~
 
-if [ -n "$(git status)" ];
+if git status | grep "Your branch is ahead of 'origin/main' by"
 then
     echo "No Changes"
 else
