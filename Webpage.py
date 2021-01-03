@@ -12,8 +12,8 @@ class HtmlElement:  # parent class
                                   "html.parser")
         self.dir_name = dir_name
         self.html_page = html_page
-        path = "assets\\" + webpage + "\\" + dir_name
-        self.files = [(path + "\\" + f) for f in os.listdir(path)]
+        path = "assets/" + webpage + "/" + dir_name
+        self.files = [(path + "/" + f) for f in os.listdir(path)]
 
     # string
     def __str__(self):
@@ -148,12 +148,12 @@ class Webpage:
         self.html_page = html_page
         self.soup = BeautifulSoup(open(html_page + ".html", encoding='utf-8'),
                                   "html.parser")
-        path = "assets\\" + dir_name
-        self.files = [(path + "\\" + f) for f in os.listdir(path)]
+        path = "assets/" + dir_name
+        self.files = [(path + "/" + f) for f in os.listdir(path)]
 
     def update(self):
         self._clear()
-        names = [path.rsplit("\\")[-1] for path in self.files]
+        names = [path.rsplit("/")[-1] for path in self.files]
         for object_dir in names:
             if object_dir.endswith("project"):
                 project = Project(self.html_page, object_dir, self.html_page)
