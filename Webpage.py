@@ -113,8 +113,9 @@ class Comic(Project):
 
         # create B with comic object and buttons
         item_b = self.soup.new_tag("span", **{'class': 'grid-item item-b'})
-        comic = self.soup.new_tag("div", **{'class': 'comic'},
-                                  **{'data-slide-index': '0'})
+        comic = self.soup.new_tag("div", **{'class': 'comic'})
+        comic['data-slide-index'] = '0'
+
         for path in self.img_paths:
             img = self.soup.new_tag("img", src=path, **{'class': 'comic-page'})
             comic.append(img)
