@@ -11,7 +11,7 @@ This repository stores the python application that is intended to be used to upd
 **Updating Website**
 1. edit the assets folder to represent your view of the website 
 2. execute the update.sh file (double check to make sure nothing important is gone, because there's no way to rewind from here)
-3. go to cindyxia20.github.io to see if it looks how you want it 
+3. go to xiacindy.github.io to see if it looks how you want it 
 
 ### **About the Assets Folder**
 1. files are read in alphanumeric order, so to order boxes in a webpage, I recommend naming them with numbers corresponding to their order (ex. 1comic, 2gallery, 3comic, 4project). Images are the same. To order images, rename them so that they correspond to the ordering you like.
