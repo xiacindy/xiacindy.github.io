@@ -3,6 +3,13 @@ import json
 import html
 from bs4 import BeautifulSoup
 
+#### Banned List ####
+
+
+glo_bannedlist = [
+    ".DS_Store"
+]
+
 #### HTMLELEMENT Object ####
 
 
@@ -13,8 +20,7 @@ class HtmlElement:  # parent class
         self.dir_name = dir_name
         self.html_page = html_page
         path = "assets/" + webpage + "/" + dir_name
-        self.files = sorted([(path + "/" + f) for f in os.listdir(path)])
-        print(self.files)
+        self.files = sorted([(path + "/" + f) for f in os.listdir(path) if f.rsplit("/") not in glo_bannedlist])
 
     # string
     def __str__(self):
@@ -36,13 +42,20 @@ class Project(HtmlElement):  # contains description
         HtmlElement.__init__(self, webpage, dir_name, html_page)
 
         # gets and parses through description -->
-        describe = [x for x in self.files if x.endswith(".json")][0]
+        try:
+            describe = [x for x in self.files if x.endswith(".json")][0]
+            with open(describe, "r", encoding='utf-8') as txt:
+                description = json.load(txt)
+                self.title = description["title"]
+                self.description = description["description"]
+                self.link = description["link"]
+        except:
+            print("\nError 69: NO DESCRIPTION/BROKEN DESCRIPTION.JSON. PLEASE BUILD NEW DESCRIPTION.JSON FILE\n")
+            self.title = "NO TITLE"
+            self.description = "NO DESCRIPTION"
+            self.link = ""
+        
         self.img_paths = [x for x in self.files if not (x.endswith(".json"))]
-        with open(describe, "r", encoding='utf-8') as txt:
-            description = json.load(txt)
-            self.title = description["title"]
-            self.description = description["description"]
-            self.link = description["link"]
 
     def make_project(self):
         projects = self.soup.find("section", id="projects")
@@ -151,9 +164,7 @@ class Webpage:
         self.soup = BeautifulSoup(open(html_page + ".html", encoding='utf-8'),
                                   "html.parser")
         path = "assets/" + dir_name
-        self.files = sorted([(path + "/" + f) for f in os.listdir(path)])
-        print(dir_name)
-        print(self.files)
+        self.files = sorted([(path + "/" + f) for f in os.listdir(path) if f.rsplit("/") not in glo_bannedlist])
 
     def update(self):
         self._clear()
