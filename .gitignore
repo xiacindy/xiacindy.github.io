@@ -2,5 +2,5 @@ templates
 .vscode
 __pycache__
 debug.log
-.DS_STORE
+.DS_Store
 #*.exe
