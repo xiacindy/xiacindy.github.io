@@ -1,0 +1,6 @@
+templates
+.vscode
+__pycache__
+debug.log
+.DS_STORE
+#*.exe

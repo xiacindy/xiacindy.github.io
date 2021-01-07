@@ -1,19 +1,21 @@
 #!/bin/bash
 
-# update.sh 
+# update.sh
 # updates the html files and pushes them to github
+
+cd "/Users/cindyxia/Desktop/GitHub Portfolio/xiacindy.github.io"
 
 # first git pulls any changes off of github (for updates to python scripts)
 
-git pull 
+git pull
 
-# runs main.py 
+# runs main.py
 
-py main.py
+python3 main.py
 
 sleep 1
 
-# git push 
+# git push
 
 git add .
 git commit -m "auto commit"
