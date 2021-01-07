@@ -13,7 +13,8 @@ class HtmlElement:  # parent class
         self.dir_name = dir_name
         self.html_page = html_page
         path = "assets/" + webpage + "/" + dir_name
-        self.files = [(path + "/" + f) for f in os.listdir(path)]
+        self.files = sorted([(path + "/" + f) for f in os.listdir(path)])
+        print(self.files)
 
     # string
     def __str__(self):
@@ -150,7 +151,9 @@ class Webpage:
         self.soup = BeautifulSoup(open(html_page + ".html", encoding='utf-8'),
                                   "html.parser")
         path = "assets/" + dir_name
-        self.files = [(path + "/" + f) for f in os.listdir(path)]
+        self.files = sorted([(path + "/" + f) for f in os.listdir(path)])
+        print(dir_name)
+        print(self.files)
 
     def update(self):
         self._clear()
