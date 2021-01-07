@@ -13,7 +13,8 @@ class HtmlElement:  # parent class
         self.dir_name = dir_name
         self.html_page = html_page
         path = "assets/" + webpage + "/" + dir_name
-        self.files = [(path + "/" + f) for f in os.listdir(path)]
+        self.files = sorted([(path + "/" + f) for f in os.listdir(path)])
+        print(self.files)
 
     # string
     def __str__(self):
@@ -113,8 +114,9 @@ class Comic(Project):
 
         # create B with comic object and buttons
         item_b = self.soup.new_tag("span", **{'class': 'grid-item item-b'})
-        comic = self.soup.new_tag("div", **{'class': 'comic'},
-                                  **{'data-slide-index': '0'})
+        comic = self.soup.new_tag("div", **{'class': 'comic'})
+        comic['data-slide-index'] = '0'
+
         for path in self.img_paths:
             img = self.soup.new_tag("img", src=path, **{'class': 'comic-page'})
             comic.append(img)
@@ -149,7 +151,9 @@ class Webpage:
         self.soup = BeautifulSoup(open(html_page + ".html", encoding='utf-8'),
                                   "html.parser")
         path = "assets/" + dir_name
-        self.files = [(path + "/" + f) for f in os.listdir(path)]
+        self.files = sorted([(path + "/" + f) for f in os.listdir(path)])
+        print(dir_name)
+        print(self.files)
 
     def update(self):
         self._clear()
